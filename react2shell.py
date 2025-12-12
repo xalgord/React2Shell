@@ -163,12 +163,26 @@ class EnhancedShell:
 
     def print_banner(self):
         """Print shell banner"""
-        print(f"{BOLD}{CYAN}╔══════════════════════════════════════════════════════╗{RESET}")
-        print(f"{BOLD}{CYAN}║{RESET}  {BOLD}{GREEN}      React2Shell - Next.js RCE Shell     {RESET}      {BOLD}{CYAN}║{RESET}")
-        print(f"{BOLD}{CYAN}║{RESET}  {YELLOW}Target:{RESET} {self.target:<40}  {BOLD}{CYAN}║{RESET}")
-        print(f"{BOLD}{CYAN}║{RESET}  {YELLOW}Root Mode:{RESET} {'ON' if self.root_mode else 'OFF':<37}  {BOLD}{CYAN}║{RESET}")
-        print(f"{BOLD}{CYAN}║{RESET}  {MAGENTA}Type:{RESET} Standalone (No Dependencies)               {BOLD}{CYAN}║{RESET}")
-        print(f"{BOLD}{CYAN}╚══════════════════════════════════════════════════════╝{RESET}")
+        # Fixed width of 60 for inner content
+        print(f"{BOLD}{CYAN}╔{'═' * 60}╗{RESET}")
+        
+        # Title centering (Content 31 chars)
+        # 60 - 31 = 29 spaces -> 14 left, 15 right
+        print(f"{BOLD}{CYAN}║{RESET}{' ' * 14}{BOLD}{GREEN}React2Shell - Next.js RCE Shell{RESET}{' ' * 15}{BOLD}{CYAN}║{RESET}")
+        
+        # Target line (Prefix 10 chars, Suffix 2 chars -> 48 chars for target)
+        # Using slice to prevent overflow breaking layout
+        target_display = (self.target[:45] + '...') if len(self.target) > 48 else self.target
+        print(f"{BOLD}{CYAN}║{RESET}  {YELLOW}Target:{RESET} {target_display:<48}  {BOLD}{CYAN}║{RESET}")
+        
+        # Root Mode line (Prefix 13 chars, Suffix 2 chars -> 45 chars for status)
+        status = 'ON' if self.root_mode else 'OFF'
+        print(f"{BOLD}{CYAN}║{RESET}  {YELLOW}Root Mode:{RESET} {status:<45}  {BOLD}{CYAN}║{RESET}")
+        
+        # Type line (Prefix 36 chars. 60 - 36 = 24 spaces padding)
+        print(f"{BOLD}{CYAN}║{RESET}  {MAGENTA}Type:{RESET} Standalone (No Dependencies){' ' * 24}{BOLD}{CYAN}║{RESET}")
+        
+        print(f"{BOLD}{CYAN}╚{'═' * 60}╝{RESET}")
         print(f"\n{BOLD}Commands:{RESET}")
         print(f"  {GREEN}.root{RESET}     - Toggle root mode (sudo -i)")
         print(f"  {GREEN}.save{RESET}     - Save output to file")
