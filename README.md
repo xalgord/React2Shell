@@ -1,4 +1,4 @@
-# ⚛️ React2Root (CVE-2025-55182)
+# ⚛️ React2Shell (CVE-2025-55182)
 
 ![Python](https://img.shields.io/badge/Python-3.x-blue?style=for-the-badge&logo=python)
 ![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
@@ -6,7 +6,7 @@
 
 **Advanced Exploitation Toolkit for Next.js Server Actions (CVE-2025-55182).**
 
-react2root is a powerful, interactive shell wrapper designed to exploit the React2Shell vulnerability. It goes beyond simple RCE by providing command history, file transfer capabilities, and automated privilege escalation strategies.
+React2Shell is a powerful, interactive shell wrapper designed to exploit the React2Shell vulnerability. It goes beyond simple RCE by providing command history, file transfer capabilities, and automated privilege escalation strategies.
 
 ---
 
@@ -23,8 +23,8 @@ react2root is a powerful, interactive shell wrapper designed to exploit the Reac
 ## 🛠️ Installation
 
 ```bash
-git clone https://github.com/username/React2Root.git
-cd React2Root
+git clone https://github.com/xalgord/React2Shell.git
+cd React2Shell
 pip install requests
 ```
 
@@ -32,13 +32,13 @@ pip install requests
 
 ### Basic Usage
 ```bash
-python3 react2root.py -u https://target-nextjs-site.com/
+python3 react2shell.py -u https://target-nextjs-site.com/
 ```
 
 ### Advanced Usage
 Run with verified root persistence strategy detection:
 ```bash
-python3 react2root.py -u https://target.com/
+python3 react2shell.py -u https://target.com/
 ```
 
 ## 🎮 Command Interface

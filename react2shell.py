@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-React2Root - CVE-2025-55182 Exploitation Suite
+React2Shell - CVE-2025-55182 Exploitation Suite
 Provides better command execution and output handling with root support
 Standalone Version - No external dependencies
 """
@@ -164,7 +164,7 @@ class EnhancedShell:
     def print_banner(self):
         """Print shell banner"""
         print(f"{BOLD}{CYAN}╔══════════════════════════════════════════════════════╗{RESET}")
-        print(f"{BOLD}{CYAN}║{RESET}  {BOLD}{GREEN}      React2Root - Next.js RCE Shell      {RESET}      {BOLD}{CYAN}║{RESET}")
+        print(f"{BOLD}{CYAN}║{RESET}  {BOLD}{GREEN}      React2Shell - Next.js RCE Shell     {RESET}      {BOLD}{CYAN}║{RESET}")
         print(f"{BOLD}{CYAN}║{RESET}  {YELLOW}Target:{RESET} {self.target:<40}  {BOLD}{CYAN}║{RESET}")
         print(f"{BOLD}{CYAN}║{RESET}  {YELLOW}Root Mode:{RESET} {'ON' if self.root_mode else 'OFF':<37}  {BOLD}{CYAN}║{RESET}")
         print(f"{BOLD}{CYAN}║{RESET}  {MAGENTA}Type:{RESET} Standalone (No Dependencies)               {BOLD}{CYAN}║{RESET}")
@@ -321,7 +321,7 @@ class EnhancedShell:
 
 if __name__ == "__main__":
     import argparse
-    parser = argparse.ArgumentParser(description="React2Root - Standalone Next.js RCE Shell")
+    parser = argparse.ArgumentParser(description="React2Shell - Standalone Next.js RCE Shell")
     parser.add_argument("-u", "--url", required=True, help="Target URL (e.g., https://example.com/)")
     
     args = parser.parse_args()
