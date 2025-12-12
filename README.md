@@ -20,6 +20,12 @@ React2Shell is a powerful, interactive shell wrapper designed to exploit the Rea
   - `.save`: Save command output to local evidence files.
 - **Base64 Evasion**: Automatically encodes payloads to bypass basic WAF filters and shell quoting issues.
 
+## Screenshots
+
+<img width="2456" height="1448" alt="1" src="https://github.com/user-attachments/assets/740b882a-709f-4b6c-b2aa-5dd142309af4" />
+<img width="1566" height="592" alt="2" src="https://github.com/user-attachments/assets/e73ca3de-3a3b-4d4b-bc9f-d81e15da5b09" />
+
+
 ## 🛠️ Installation
 
 ```bash
