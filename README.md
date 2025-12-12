@@ -1,0 +1,73 @@
+# ⚛️ React2Root (CVE-2025-55182)
+
+![Python](https://img.shields.io/badge/Python-3.x-blue?style=for-the-badge&logo=python)
+![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
+![Vulnerability](https://img.shields.io/badge/CVE-2025--55182-Critical-red?style=for-the-badge)
+
+**Advanced Exploitation Toolkit for Next.js Server Actions (CVE-2025-55182).**
+
+react2root is a powerful, interactive shell wrapper designed to exploit the React2Shell vulnerability. It goes beyond simple RCE by providing command history, file transfer capabilities, and automated privilege escalation strategies.
+
+---
+
+## 🚀 Features
+
+- **Single-File Executable**: Consolidates exploit logic and shell interface into one script. Zero external dependencies.
+- **Interactive Shell**: Full pseudo-terminal experience with command history.
+- **Auto-Root Escalation**: Built-in pipe injection strategy (`base64 | sudo -i`) to bypass shell restrictions and escalate to root instantly.
+- **File Operations**:
+  - `.download <remote> [local]`: Reliable binary-safe file download using base64 encoding.
+  - `.save`: Save command output to local evidence files.
+- **Base64 Evasion**: Automatically encodes payloads to bypass basic WAF filters and shell quoting issues.
+
+## 🛠️ Installation
+
+```bash
+git clone https://github.com/username/React2Root.git
+cd React2Root
+pip install requests
+```
+
+## 💻 Usage
+
+### Basic Usage
+```bash
+python3 react2root.py -u https://target-nextjs-site.com/
+```
+
+### Advanced Usage
+Run with verified root persistence strategy detection:
+```bash
+python3 react2root.py -u https://target.com/
+```
+
+## 🎮 Command Interface
+
+Once inside the shell:
+
+| Command | Description |
+|:---|:---|
+| `.root` | Toggle **Root Mode** (Wraps commands in `sudo -i`) |
+| `.download <file>` | Download a file from the remote server |
+| `.save` | Save the last command's output to a file |
+| `.exit` | Exit the shell |
+
+### Example Session
+```bash
+ubuntu@target:~$ id
+uid=1000(ubuntu) gid=1000(ubuntu) groups=1000(ubuntu)...
+
+ubuntu@target:~$ .root
+[*] Root mode ENABLED
+
+root@target:~$ id
+uid=0(root) gid=0(root) groups=0(root)
+```
+
+## ⚠️ Disclaimer
+
+**FOR EDUCATIONAL PURPOSES ONLY.**
+This tool is intended for security research and authorization testing only. The authors are not responsible for any misuse or damage caused by this tool. Do not scan or exploit targets you do not have explicit permission to test.
+
+---
+*Developed for ethical penetration testing and red teaming operations.*
